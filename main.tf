@@ -42,7 +42,7 @@ resource "aws_cloudwatch_dashboard" "Dashboard" {
          "height":6,
          "properties":{
             "metrics":[
-               [ { "expression": "SEARCH('SELECT AVG(CPUUtilization) FROM AWS/EC2 GROUP BY InstanceId ORDER BY MAX() DESC LIMIT 10'" } ],
+               [ { "expression": "SEARCH('SELECT AVG(CPUUtilization) FROM AWS/EC2 GROUP BY InstanceId ORDER BY MAX() DESC LIMIT 10', 'Average', 300)" } ],
             ],
             "view": "timeSeries",
             "stacked": false,
